@@ -21,9 +21,12 @@ app.use(express.json());
 
 app.use("/api/transactions", transactionRoute);
 
+app.get("/", (req, res) => {
+  res.send("SpendX API is running perfectly on Vercel!");
+});
 // Chỉ chạy app.listen ở môi trường local (Dev)
-// Vercel Serverless sẽ tự quản lý server thông qua lệnh export bên dưới
-if (process.env.NODE_ENV !== "production") {
+// Vercel sẽ tự động có biến môi trường VERCEL="1"
+if (!process.env.VERCEL) {
   connectDB().then(() => {
     app.listen(PORT, () => {
       console.log(`Server bắt đầu chạy trên cổng ${PORT}!`);
