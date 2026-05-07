@@ -15,10 +15,10 @@ import { useState } from "react";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Bảng điều khiển", active: true },
-  { icon: ReceiptText, label: "Giao dịch", active: false },
-  { icon: PiggyBank, label: "Ngân sách", active: false },
-  { icon: BarChart3, label: "Báo cáo", active: false },
-  { icon: Settings, label: "Cài đặt", active: false },
+  // { icon: ReceiptText, label: "Giao dịch", active: false },
+  // { icon: PiggyBank, label: "Ngân sách", active: false },
+  // { icon: BarChart3, label: "Báo cáo", active: false },
+  // { icon: Settings, label: "Cài đặt", active: false },
 ];
 
 const DAY_HEADERS = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];

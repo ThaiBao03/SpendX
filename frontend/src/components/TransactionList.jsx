@@ -133,19 +133,18 @@ export function TransactionList({ onDataChange, selectedDate }) {
   const safePage = totalPages > 0 ? Math.min(page, totalPages) : 1;
   const paginated = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
-  // Tổng thu của ngày được chọn (hoặc hôm nay nếu chưa chọn)
+  // Tổng thu chi của ngày được chọn (hoặc hôm nay nếu chưa chọn)
   const incomeDateRef = selectedDate ?? new Date();
   const displayIncome = transactions
     .filter((t) => {
       const d = new Date(t.date);
       return (
-        t.type === "income" &&
         d.getFullYear() === incomeDateRef.getFullYear() &&
         d.getMonth() === incomeDateRef.getMonth() &&
         d.getDate() === incomeDateRef.getDate()
       );
     })
-    .reduce((s, t) => s + t.amount, 0);
+    .reduce((s, t) => s + (t.type === "expense" ? -Math.abs(t.amount) : Math.abs(t.amount)), 0);
 
   const handleFilterChange = (key) => {
     setFilter(key);
