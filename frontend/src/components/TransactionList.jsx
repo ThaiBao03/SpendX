@@ -238,7 +238,7 @@ export function TransactionList({ onDataChange, selectedDate }) {
       </div>
 
       {/* Transaction rows */}
-      <div className="flex flex-col gap-3 flex-1">
+      <div className="flex flex-col gap-2.5 flex-1">
         {loading && (
           <div className="flex items-center justify-center py-12 text-slate-400">
             <Loader2 size={24} className="animate-spin mr-2" />
@@ -285,7 +285,7 @@ export function TransactionList({ onDataChange, selectedDate }) {
             <div
               key={t._id}
               onClick={() => setActiveCardId(activeCardId === t._id ? null : t._id)}
-              className="group flex items-center bg-white rounded-2xl px-2 lg:px-3 py-2 lg:py-2.5 shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all cursor-pointer"
+              className="group flex items-center bg-white rounded-2xl px-2 lg:px-2 py-2 lg:py-2.5 shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all cursor-pointer"
             >
               <div className="flex items-center gap-3 flex-shrink-0">
                 <div
