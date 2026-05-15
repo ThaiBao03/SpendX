@@ -113,23 +113,25 @@ export function FinancialSummary({ transactions = [] }) {
           <h3 className="text-[13px] font-bold text-slate-800 mb-3">Hoạt động gần đây</h3>
           <div className="space-y-3">
             {recent.map((t) => (
-              <div key={t._id} className="flex gap-2.5">
+              <div key={t._id} className="flex gap-2.5 overflow-hidden">
                 <div
                   className={`mt-1.5 w-2 h-2 rounded-full flex-shrink-0 ${
                     t.type === "income" ? "bg-emerald-500" : "bg-rose-500"
                   }`}
                 />
-                <div>
-                  <p className="text-[12.5px] text-slate-700 leading-snug">
-                    {t.title}{" "}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-[12.5px] text-slate-700 leading-snug truncate">
+                      {t.title}
+                    </span>
                     <span
-                      className={`font-semibold ${
+                      className={`text-[12.5px] font-semibold flex-shrink-0 ${
                         t.type === "income" ? "text-emerald-600" : "text-rose-500"
                       }`}
                     >
                       {t.amount.toLocaleString("vi-VN")} đ
                     </span>
-                  </p>
+                  </div>
                   <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
                     {timeAgo(t.date)}
                   </p>

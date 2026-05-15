@@ -193,7 +193,7 @@ export function Sidebar({ collapsed, onToggle, selectedDate, onSelectDate }) {
               </div>
               <div className="min-w-0">
                 <span className="text-[15px] font-bold tracking-tight text-blue-900 leading-tight block truncate">
-                  Precision Ledger
+                  QUẢN LÝ CHI TIÊU
                 </span>
                 <p className="text-[9px] tracking-widest uppercase text-blue-400 font-semibold leading-tight">
                   NHÀ PHÂN TÍCH CẤU TRÚC
